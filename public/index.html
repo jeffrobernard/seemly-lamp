@@ -12,25 +12,8 @@
     <script src="https://unpkg.com/aframe-randomizer-components@^3.0.1/dist/aframe-randomizer-components.min.js"></script>
     <script src="https://unpkg.com/aframe-particle-system-component@1.0.5/dist/aframe-particle-system-component.min.js"></script>
     <script src="/js/spawn-in-circle.component.js"></script>
-
-    <script>
-      // Define custom schema for syncing avatar color, set by random-color
-      NAF.schemas.add({
-        template: '#avatar-template',
-        components: [
-          'position',
-          'rotation',
-          {
-            selector: '.head',
-            component: 'material',
-            property: 'color'
-          }
-        ]
-      });
-    </script>
   </head>
   <body>
-
     <a-scene networked-scene="
       room: basic;
       debug: true;
@@ -108,6 +91,20 @@
         var particles = document.getElementById('particles');
         particles.parentNode.removeChild(particles);
       }
+      
+      // Define custom schema for syncing avatar color, set by random-color
+      NAF.schemas.add({
+        template: '#avatar-template',
+        components: [
+          'position',
+          'rotation',
+          {
+            selector: '.head',
+            component: 'material',
+            property: 'color'
+          }
+        ]
+      });
     </script>
   </body>
 </html>
