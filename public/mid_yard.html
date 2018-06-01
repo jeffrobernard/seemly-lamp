@@ -25,7 +25,7 @@
   </head>
   <body>
     <a-scene networked-scene="
-      room: basic;
+      room: audio;
       adapter: easyrtc;
       audio: true;
       debug: true;  
@@ -39,7 +39,7 @@
 
         <!-- Avatar -->
         <template id="avatar-template">
-          <a-entity class="avatar">
+          <a-entity class="avatar" networked-audio-source>
             <a-sphere class="head"
               color="#5985ff"
               scale="0.45 0.5 0.4"
